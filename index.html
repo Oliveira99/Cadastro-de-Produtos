@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sistema de Cadastro</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container" id="fornecedor-container">
+    <h2>Cadastro de Fornecedor</h2>
+    <label>Nome da Empresa*<input id="nomeFornecedor" placeholder="Insira o nome da empresa" /></label>
+    <label>CNPJ*<input id="cnpjFornecedor" placeholder="00.000.000/0000-00" /></label>
+    <label>Endereço*<input id="enderecoFornecedor" placeholder="Insira o endereço completo da empresa" /></label>
+    <label>Telefone*<input id="telefoneFornecedor" placeholder="(00) 0000-0000" /></label>
+    <label>E-mail*<input id="emailFornecedor" placeholder="exemplo@fornecedor.com" /></label>
+    <label>Contato Principal*<input id="contatoFornecedor" placeholder="Nome do contato principal" /></label>
+    <button id="btnCadastrarFornecedor">Cadastrar</button>
+    <div id="mensagemFornecedor"></div>
+  </div>
+
+  <div class="container" id="produto-container">
+    <h2>Cadastro de Produto</h2>
+    <label>Nome do Produto*<input id="nomeProduto" placeholder="Insira o nome do produto" /></label>
+    <label>Código de Barras<input id="codigoProduto" placeholder="Insira o código de barras" /></label>
+    <label>Descrição*<textarea id="descricaoProduto" placeholder="Descreva brevemente o produto"></textarea></label>
+    <label>Quantidade em Estoque<input id="quantidadeProduto" type="number" placeholder="Quantidade disponível" /></label>
+    <label>Categoria*
+      <select id="categoriaProduto">
+        <option value="">Selecione</option>
+        <option>Eletrônicos</option>
+        <option>Alimentos</option>
+        <option>Vestuário</option>
+        <option>Outro</option>
+      </select>
+    </label>
+    <label>Data de Validade<input id="validadeProduto" type="date" /></label>
+    <label>Imagem do Produto<input id="imagemProduto" type="file" /></label>
+    <button id="btnCadastrarProduto">Cadastrar</button>
+    <div id="mensagemProduto"></div>
+  </div>
+
+  <div class="container" id="associacao-container">
+    <h2>Associação de Fornecedor a Produto</h2>
+    <label>Produto:
+      <select id="produtoSelect"></select>
+    </label>
+    <label>Fornecedor:
+      <select id="fornecedorSelect"></select>
+    </label>
+    <button id="btnAssociarFornecedor">Associar Fornecedor</button>
+    <ul id="fornecedoresAssociados"></ul>
+    <div id="mensagemAssociacao"></div>
+  </div>
+
+  <div class="container" id="dados-container">
+    <h2>Gerenciar Dados</h2>
+    <button id="btnExportarDados">Exportar Dados (JSON)</button>
+    <input type="file" id="inputImportarDados" accept=".json" style="display:none" />
+    <button id="btnImportarDados">Importar Dados (JSON)</button>
+    <button id="btnLimparDados">Limpar Banco Local</button>
+    <div id="mensagemDados"></div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
